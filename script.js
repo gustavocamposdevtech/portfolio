@@ -19,7 +19,7 @@ if (botaoMenu && menu) {
 }
 
 
-// FECHA O MENU DEPOIS DO CLIQUE
+// FECHA O MENU APÓS CLICAR
 
 linksMenu.forEach(function (link) {
     link.addEventListener("click", function () {
@@ -29,14 +29,14 @@ linksMenu.forEach(function (link) {
 });
 
 
-// ANO AUTOMÁTICO DO RODAPÉ
+// ANO AUTOMÁTICO
 
 if (ano) {
     ano.textContent = new Date().getFullYear();
 }
 
 
-// ELEMENTOS QUE RECEBERÃO ANIMAÇÃO
+// ELEMENTOS ANIMADOS
 
 const elementosAnimados = document.querySelectorAll(
     ".titulo-secao, " +
@@ -48,9 +48,6 @@ const elementosAnimados = document.querySelectorAll(
     ".formas-contato"
 );
 
-
-// ADICIONA A CLASSE DE ANIMAÇÃO
-
 elementosAnimados.forEach(function (elemento, indice) {
     elemento.classList.add("revelar");
 
@@ -60,7 +57,7 @@ elementosAnimados.forEach(function (elemento, indice) {
 });
 
 
-// OBSERVA QUANDO O ELEMENTO APARECE NA TELA
+// ANIMAÇÕES AO ROLAR
 
 const observador = new IntersectionObserver(
     function (entradas) {
@@ -76,15 +73,12 @@ const observador = new IntersectionObserver(
     }
 );
 
-
-// ATIVA O OBSERVADOR
-
 elementosAnimados.forEach(function (elemento) {
     observador.observe(elemento);
 });
 
 
-// DESTACA O LINK DA SEÇÃO ATUAL
+// LINK ATIVO DO MENU
 
 const secoes = document.querySelectorAll("main section");
 
